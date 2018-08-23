@@ -6,11 +6,13 @@
 //  Copyright © 2018 Brian Bouchard. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 
 struct Stock {
     var name: String
     var symbol: String
+    var price: Double
+    var price_as_string: String
     
     enum SerializationError: Error {
         case missing(String)
@@ -21,13 +23,18 @@ struct Stock {
         guard let name = json["companyName"] as? String else {
             throw SerializationError.missing("missing data") }
         guard let symbol = json["symbol"] as? String else {
-            throw SerializationError.missing("missing data")
-        }
+            throw SerializationError.missing("missing data") }
+        guard let price = json["latestPrice"] as? Double else {
+            throw SerializationError.missing("missing data") }
         
         self.name = name
         self.symbol = symbol
+        self.price = price
+        self.price_as_string = String(price)
+    
     }
-}
+} */
+
 
     
 

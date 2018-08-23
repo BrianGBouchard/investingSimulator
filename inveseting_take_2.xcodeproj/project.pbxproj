@@ -14,6 +14,8 @@
 		A8472A5A212B37660008FB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8472A59212B37660008FB40 /* Assets.xcassets */; };
 		A8472A5D212B37660008FB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8472A5B212B37660008FB40 /* LaunchScreen.storyboard */; };
 		A8472A65212B38800008FB40 /* stock_portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A64212B38800008FB40 /* stock_portfolio.swift */; };
+		A8472A69212C4CAA0008FB40 /* Stock_view_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A68212C4CAA0008FB40 /* Stock_view_controller.swift */; };
+		A8472AB3212DBD1F0008FB40 /* EPS_stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472AB2212DBD1F0008FB40 /* EPS_stat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A8472A5C212B37660008FB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8472A5E212B37660008FB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8472A64212B38800008FB40 /* stock_portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stock_portfolio.swift; sourceTree = "<group>"; };
+		A8472A68212C4CAA0008FB40 /* Stock_view_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_view_controller.swift; sourceTree = "<group>"; };
+		A8472AB2212DBD1F0008FB40 /* EPS_stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPS_stat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			children = (
 				A8472A4F212B37650008FB40 /* AppDelegate.swift */,
 				A8472A51212B37650008FB40 /* ViewController.swift */,
+				A8472A68212C4CAA0008FB40 /* Stock_view_controller.swift */,
+				A8472AB2212DBD1F0008FB40 /* EPS_stat.swift */,
 				A8472A64212B38800008FB40 /* stock_portfolio.swift */,
 				A8472A53212B37650008FB40 /* Main.storyboard */,
 				A8472A59212B37660008FB40 /* Assets.xcassets */,
@@ -143,7 +149,9 @@
 			files = (
 				A8472A52212B37650008FB40 /* ViewController.swift in Sources */,
 				A8472A65212B38800008FB40 /* stock_portfolio.swift in Sources */,
+				A8472A69212C4CAA0008FB40 /* Stock_view_controller.swift in Sources */,
 				A8472A50212B37650008FB40 /* AppDelegate.swift in Sources */,
+				A8472AB3212DBD1F0008FB40 /* EPS_stat.swift in Sources */,
 				A8472A58212B37650008FB40 /* inveseting_take_2.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
