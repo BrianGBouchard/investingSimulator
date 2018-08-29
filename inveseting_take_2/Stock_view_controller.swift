@@ -170,6 +170,10 @@ class Stock_view_controller: UIViewController {
         task.resume()
     }
     
+    
+    //MARK:Event Methods
+    
+    
     @IBAction func linkClicked(sender: Any) {
         let link = "https://iextrading.com/developer/"
         if let url = URL(string: link) {

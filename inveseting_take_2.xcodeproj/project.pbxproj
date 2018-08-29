@@ -16,6 +16,7 @@
 		A8472A65212B38800008FB40 /* stock_portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A64212B38800008FB40 /* stock_portfolio.swift */; };
 		A8472A69212C4CAA0008FB40 /* Stock_view_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A68212C4CAA0008FB40 /* Stock_view_controller.swift */; };
 		A8472AB3212DBD1F0008FB40 /* EPS_stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472AB2212DBD1F0008FB40 /* EPS_stat.swift */; };
+		A8472AD82136FD040008FB40 /* TestStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472AD72136FD040008FB40 /* TestStock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A8472A64212B38800008FB40 /* stock_portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stock_portfolio.swift; sourceTree = "<group>"; };
 		A8472A68212C4CAA0008FB40 /* Stock_view_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_view_controller.swift; sourceTree = "<group>"; };
 		A8472AB2212DBD1F0008FB40 /* EPS_stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPS_stat.swift; sourceTree = "<group>"; };
+		A8472AD72136FD040008FB40 /* TestStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +51,9 @@
 				A8472A4E212B37650008FB40 /* inveseting_take_2 */,
 				A8472A4D212B37650008FB40 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		A8472A4D212B37650008FB40 /* Products */ = {
 			isa = PBXGroup;
@@ -64,6 +68,7 @@
 			children = (
 				A8472A4F212B37650008FB40 /* AppDelegate.swift */,
 				A8472A51212B37650008FB40 /* ViewController.swift */,
+				A8472AD72136FD040008FB40 /* TestStock.swift */,
 				A8472A68212C4CAA0008FB40 /* Stock_view_controller.swift */,
 				A8472AB2212DBD1F0008FB40 /* EPS_stat.swift */,
 				A8472A64212B38800008FB40 /* stock_portfolio.swift */,
@@ -149,6 +154,7 @@
 			files = (
 				A8472A52212B37650008FB40 /* ViewController.swift in Sources */,
 				A8472A65212B38800008FB40 /* stock_portfolio.swift in Sources */,
+				A8472AD82136FD040008FB40 /* TestStock.swift in Sources */,
 				A8472A69212C4CAA0008FB40 /* Stock_view_controller.swift in Sources */,
 				A8472A50212B37650008FB40 /* AppDelegate.swift in Sources */,
 				A8472AB3212DBD1F0008FB40 /* EPS_stat.swift in Sources */,
