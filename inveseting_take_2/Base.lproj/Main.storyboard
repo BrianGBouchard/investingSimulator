@@ -78,7 +78,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NsC-08-rc8" kind="show" id="dvS-by-iyJ"/>
+                                            <segue destination="NsC-08-rc8" kind="show" identifier="root-to-detail" id="dvS-by-iyJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -131,52 +131,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uC-gd-bb6">
-                                <rect key="frame" x="16" y="98" width="343" height="65"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7z-EO-cGG">
+                                <rect key="frame" x="16" y="369" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-1J-ZVv">
-                                <rect key="frame" x="16" y="171" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-1u-TeM">
-                                <rect key="frame" x="0.0" y="640" width="111" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="*IEX real-time price">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="linkClickedWithSender:" destination="NsC-08-rc8" eventType="touchUpInside" id="OgI-N5-YTP"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7z-EO-cGG">
-                                <rect key="frame" x="16" y="369" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9v-nh-GTS">
-                                <rect key="frame" x="16" y="398" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viO-PB-kvG">
-                                <rect key="frame" x="16" y="427" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9v-nh-GTS">
+                                <rect key="frame" x="16" y="395" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-oX-dxp">
                                 <rect key="frame" x="283" y="73" width="83" height="30"/>
                                 <state key="normal" title="Trade Stock"/>
+                                <connections>
+                                    <action selector="transactionButtonPressedWithSender:" destination="NsC-08-rc8" eventType="touchUpInside" id="O8w-J0-P8v"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbV-yw-oma">
-                                <rect key="frame" x="14" y="485" width="345" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbV-yw-oma">
+                                <rect key="frame" x="14" y="485" width="151" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Click here for full statistics">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -185,43 +160,70 @@
                                     <action selector="statsLinkClickedWithSender:" destination="NsC-08-rc8" eventType="touchUpInside" id="yMn-jx-10k"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-1u-TeM">
+                                <rect key="frame" x="16" y="640" width="111" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="*IEX real-time price">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="linkClickedWithSender:" destination="NsC-08-rc8" eventType="touchUpInside" id="OgI-N5-YTP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uC-gd-bb6">
+                                <rect key="frame" x="16" y="139" width="343" height="32.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-1J-ZVv">
+                                <rect key="frame" x="16" y="179" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRv-di-xlv">
+                                <rect key="frame" x="0.0" y="244" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viO-PB-kvG">
+                                <rect key="frame" x="16" y="421" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="viO-PB-kvG" firstAttribute="top" secondItem="U9v-nh-GTS" secondAttribute="bottom" constant="8" id="2tD-xo-z69"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="viO-PB-kvG" secondAttribute="trailing" constant="16" id="3W6-Ef-ISg"/>
-                            <constraint firstItem="5CM-1u-TeM" firstAttribute="top" secondItem="QbV-yw-oma" secondAttribute="bottom" constant="125" id="3d9-UT-s8v"/>
-                            <constraint firstItem="viO-PB-kvG" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="4BY-ZJ-MbC"/>
                             <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="K0t-oX-dxp" secondAttribute="trailing" constant="9" id="4ZX-UI-52n"/>
-                            <constraint firstItem="QbV-yw-oma" firstAttribute="top" secondItem="viO-PB-kvG" secondAttribute="bottom" constant="37" id="6IS-Qo-O0O"/>
-                            <constraint firstItem="tHV-1J-ZVv" firstAttribute="top" secondItem="6uC-gd-bb6" secondAttribute="bottom" constant="8" id="EFa-7V-Dcj"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="bottom" secondItem="6uC-gd-bb6" secondAttribute="bottom" constant="504" id="Ecs-Kx-Kkx"/>
-                            <constraint firstItem="U9v-nh-GTS" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="Esr-eP-sfa"/>
-                            <constraint firstItem="tHV-1J-ZVv" firstAttribute="top" secondItem="K0t-oX-dxp" secondAttribute="bottom" constant="68" id="FZG-sZ-5Oj"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="QbV-yw-oma" secondAttribute="trailing" constant="16" id="Fjs-Ig-dFN"/>
-                            <constraint firstItem="5CM-1u-TeM" firstAttribute="top" secondItem="D7z-EO-cGG" secondAttribute="bottom" constant="250" id="IF8-U4-gZm"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="D7z-EO-cGG" secondAttribute="trailing" constant="16" id="L7o-Mb-pSU"/>
-                            <constraint firstItem="D7z-EO-cGG" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="Oo1-h0-KfN"/>
+                            <constraint firstItem="qRv-di-xlv" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" id="72i-Ew-4eF"/>
+                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="5CM-1u-TeM" secondAttribute="trailing" constant="248" id="7Y6-ZF-9a1"/>
+                            <constraint firstItem="U9v-nh-GTS" firstAttribute="top" secondItem="D7z-EO-cGG" secondAttribute="bottom" constant="8" id="8wX-QC-DmA"/>
+                            <constraint firstItem="5CM-1u-TeM" firstAttribute="top" secondItem="QbV-yw-oma" secondAttribute="bottom" constant="128" id="Bvl-ra-HJX"/>
+                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="D7z-EO-cGG" secondAttribute="trailing" constant="16" id="Gcx-pC-A4h"/>
+                            <constraint firstItem="viO-PB-kvG" firstAttribute="top" secondItem="U9v-nh-GTS" secondAttribute="bottom" constant="8" id="GiC-uK-2tY"/>
+                            <constraint firstItem="5CM-1u-TeM" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="Hma-vA-5HS"/>
+                            <constraint firstItem="QbV-yw-oma" firstAttribute="top" secondItem="viO-PB-kvG" secondAttribute="bottom" constant="46" id="M9D-fC-21b"/>
                             <constraint firstItem="K0t-oX-dxp" firstAttribute="top" secondItem="vcy-OE-MTv" secondAttribute="top" constant="9" id="Otd-gx-7hO"/>
-                            <constraint firstItem="U9v-nh-GTS" firstAttribute="top" secondItem="D7z-EO-cGG" secondAttribute="bottom" constant="8" id="Sfd-k0-mYb"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="6uC-gd-bb6" secondAttribute="trailing" constant="16" id="Tih-pU-FVo"/>
-                            <constraint firstItem="U9v-nh-GTS" firstAttribute="top" secondItem="D7z-EO-cGG" secondAttribute="bottom" constant="8" id="Tzt-zQ-rZH"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="5CM-1u-TeM" secondAttribute="trailing" constant="264" id="XQD-AV-CZU"/>
+                            <constraint firstItem="5CM-1u-TeM" firstAttribute="bottom" secondItem="vcy-OE-MTv" secondAttribute="bottom" id="T4c-3S-HKN"/>
+                            <constraint firstItem="viO-PB-kvG" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="TH4-7F-kS0"/>
+                            <constraint firstItem="QbV-yw-oma" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="14" id="U55-BP-M0l"/>
+                            <constraint firstItem="tHV-1J-ZVv" firstAttribute="top" secondItem="6uC-gd-bb6" secondAttribute="bottom" constant="8" id="VPg-Ij-Uu4"/>
+                            <constraint firstItem="qRv-di-xlv" firstAttribute="top" secondItem="tHV-1J-ZVv" secondAttribute="bottom" constant="44" id="W1h-m9-cH1"/>
                             <constraint firstItem="K0t-oX-dxp" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="283" id="Xem-JC-4x7"/>
-                            <constraint firstItem="5CM-1u-TeM" firstAttribute="bottom" secondItem="vcy-OE-MTv" secondAttribute="bottom" id="ZOv-V9-3fi"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="U9v-nh-GTS" secondAttribute="trailing" constant="16" id="eTg-9T-3HM"/>
-                            <constraint firstItem="tHV-1J-ZVv" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="ej9-35-CeZ"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="tHV-1J-ZVv" secondAttribute="trailing" constant="16" id="gG9-UD-E4D"/>
-                            <constraint firstItem="5CM-1u-TeM" firstAttribute="top" secondItem="tHV-1J-ZVv" secondAttribute="bottom" constant="448" id="hQF-cR-NYZ"/>
-                            <constraint firstItem="5CM-1u-TeM" firstAttribute="top" secondItem="U9v-nh-GTS" secondAttribute="bottom" constant="221" id="j87-9a-nax"/>
-                            <constraint firstItem="5CM-1u-TeM" firstAttribute="top" secondItem="viO-PB-kvG" secondAttribute="bottom" constant="192" id="nm8-nW-TnD"/>
-                            <constraint firstItem="viO-PB-kvG" firstAttribute="top" secondItem="U9v-nh-GTS" secondAttribute="bottom" constant="8" id="pGl-f4-Qgq"/>
-                            <constraint firstItem="5CM-1u-TeM" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" id="qkp-YS-rQU"/>
-                            <constraint firstItem="6uC-gd-bb6" firstAttribute="top" secondItem="vcy-OE-MTv" secondAttribute="top" constant="34" id="r3p-a8-vyu"/>
-                            <constraint firstItem="QbV-yw-oma" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="14" id="tWK-xS-6T3"/>
-                            <constraint firstItem="D7z-EO-cGG" firstAttribute="top" secondItem="tHV-1J-ZVv" secondAttribute="bottom" constant="177" id="ueu-gE-y8K"/>
-                            <constraint firstItem="vcy-OE-MTv" firstAttribute="bottom" secondItem="tHV-1J-ZVv" secondAttribute="bottom" constant="475" id="vGf-yh-ac3"/>
-                            <constraint firstItem="6uC-gd-bb6" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="yOr-29-G2l"/>
+                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="6uC-gd-bb6" secondAttribute="trailing" constant="16" id="b6q-7n-Ry9"/>
+                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="tHV-1J-ZVv" secondAttribute="trailing" constant="16" id="dFB-6K-4xP"/>
+                            <constraint firstItem="qRv-di-xlv" firstAttribute="trailing" secondItem="vcy-OE-MTv" secondAttribute="trailing" id="g7w-Tn-6nd"/>
+                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="U9v-nh-GTS" secondAttribute="trailing" constant="16" id="ikZ-dX-ey0"/>
+                            <constraint firstItem="tHV-1J-ZVv" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="nIz-39-aSk"/>
+                            <constraint firstItem="D7z-EO-cGG" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="pPZ-dD-6Fl"/>
+                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="viO-PB-kvG" secondAttribute="trailing" constant="16" id="qOE-0g-8UZ"/>
+                            <constraint firstItem="6uC-gd-bb6" firstAttribute="top" secondItem="K0t-oX-dxp" secondAttribute="bottom" constant="36" id="rn1-UU-UvR"/>
+                            <constraint firstItem="6uC-gd-bb6" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="sdS-5V-AF5"/>
+                            <constraint firstItem="vcy-OE-MTv" firstAttribute="trailing" secondItem="QbV-yw-oma" secondAttribute="trailing" constant="210" id="tVV-5X-Eha"/>
+                            <constraint firstItem="U9v-nh-GTS" firstAttribute="leading" secondItem="vcy-OE-MTv" secondAttribute="leading" constant="16" id="vBW-5r-t5I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vcy-OE-MTv"/>
                     </view>
@@ -229,6 +231,7 @@
                         <outlet property="companyNameLabel" destination="6uC-gd-bb6" id="PJw-Ng-0o2"/>
                         <outlet property="eps_label" destination="D7z-EO-cGG" id="hM5-nd-zL0"/>
                         <outlet property="pe_ratio_label" destination="U9v-nh-GTS" id="L70-5B-EU4"/>
+                        <outlet property="quantity_label" destination="qRv-di-xlv" id="PxE-QM-VIk"/>
                         <outlet property="roe_label" destination="viO-PB-kvG" id="zoX-PY-Ndn"/>
                         <outlet property="stockPriceLabel" destination="tHV-1J-ZVv" id="Vuo-ye-F71"/>
                     </connections>

@@ -1,18 +1,23 @@
 import UIKit
 import CoreData
 
+var account_container: [Account] = []
+
+let context1 = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+let basePath = "https://api.iextrading.com/1.0"
+
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    // MARK: Properties
-    private let basePath = "https://api.iextrading.com/1.0"
-    private var account_container: [Account] = []
-    private let context1 = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
   
     // MARK: Outlets
+
     @IBOutlet var textField: UITextField!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var accountLabel: UILabel!
-    
+
+
     var stocks: [Stock] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -32,9 +37,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         super.viewDidLoad()
         loadData()
-        
         account_container = []
         let request1: NSFetchRequest<Account> = Account.fetchRequest()
+
         do {
             account_container = try context1.fetch(request1)
         } catch {
@@ -44,7 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if account_container.count > 0 {
             print("")
         } else {
-            var new_account = Account(context: context1)
+            let new_account = Account(context: context1)
             new_account.balance = 10000
             new_account.name = "MY_ACCOUNT"
             account_container.append(new_account)
@@ -63,24 +68,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch { print(error.localizedDescription) }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let request: NSFetchRequest<Stock> = Stock.fetchRequest()
+        do {
+            stocks = try context1.fetch(request)
+        } catch { print(error.localizedDescription) }
+        accountLabel.text = "Account balance: $" + String(account_container[0].balance)
+        self.tableView.reloadData()
+    }
+
     // MARK: Private Methods
 
     private func initializeManagedObject(json: [String: Any]) -> Stock {
         let new_stock = Stock(context: context1)
-        new_stock.name = json["companyName"] as! String
-        new_stock.symbol = json["symbol"] as! String
+        new_stock.name = json["companyName"] as? String
+        new_stock.symbol = json["symbol"] as? String
         return new_stock
     }
 
     private func initializeTestObject(json: [String: Any]) -> TestStock {
-        let test_stock = TestStock(symbol: json["symbol"] as! String, name: json["companyName"] as! String)
+        let test_stock = TestStock(symbol: json["symbol"] as! String, name: json["companyName"] as! String, price: json["latestPrice"] as! Double)
 
         return test_stock
     }
 
     private func create_stock(withTicket ticket: String, quantity: Int, completion: @ escaping ([Stock]) -> ()) throws {
         if quantity < 1 {
-            self.invalidInputAlert()
+            invalidInputAlert(controller: self)
             return
         }
 
@@ -91,16 +106,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         let new_stock = self.initializeManagedObject(json: json)
+                        new_stock.quantity = 0
+                        self.stockTransaction(stock: new_stock, quantity: quantity)
                         for item in self.stocks {
                             if item.name == new_stock.name {
-                                self.showAlert()
+                                showAlert(controller: self)
                                 return
                             }
                         }
 
                         self.stocks.append(new_stock)
                         do {
-                            try self.context1.save()
+                            try context1.save()
                         } catch { print(error.localizedDescription) }
                     }
                 } catch { print(error.localizedDescription) }
@@ -115,7 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let url = basePath + "/stock/" + ticket + "/quote"
         let urlLink: URL? = URL(string: url)
         if urlLink == nil {
-            self.invalidStockAlert()
+            invalidStockAlert(controller: self)
             completion(nil)
             return
         }
@@ -149,7 +166,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             checkStockValidity(withTicket: newText) { (newstock: TestStock?) in
                 if newstock == nil {
                     DispatchQueue.main.async {
-                        self.invalidStockAlert()
+                        invalidStockAlert(controller: self)
                     }
                     return
                 }
@@ -159,7 +176,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 for item in self.stocks {
                     if item.symbol! == newText.uppercased() {
                         DispatchQueue.main.async {
-                            self.showAlert()
+                            showAlert(controller: self)
                             self.textField.text = ""
                             self.textField.resignFirstResponder()
                         }
@@ -176,11 +193,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let textf = buyStockAlert.textFields![0] as UITextField
                         do {
                             guard let user_int = Int(textf.text!) else {
-                                self.invalidInputAlert()
+                                invalidInputAlert(controller: self)
                                 return
                             }
+                            if (newstock!.price * Double(user_int)) > account_container[0].balance {
+                                insufficientFundsAlert(controller: self)
+                                return
+                            } else {
                             try self.create_stock(withTicket: newText, quantity: user_int) { (results: [Stock]) in
                                 return }
+                            }
                         } catch { print(error.localizedDescription) }
                     }
                     let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
@@ -198,6 +220,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textField.resignFirstResponder()
         addNewSymbol()
 
         return true
@@ -220,6 +243,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 }
+
+// MARK: TableView Methods
 
 extension ViewController: UITableViewDataSource {
     
@@ -245,38 +270,43 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+// MARK: Transaction Methods
+
 extension ViewController {
-    
-    // MARK: Error Alert Methods
-    
-    func showAlert() {
-        let alert: UIAlertController = UIAlertController(title: "Stock already in Portfolio", message: "Click on stock to buy or sell", preferredStyle: .alert)
-        let action1: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(action1)
-        DispatchQueue.main.async {
-                    self.present(alert, animated: true)
+    func stockTransactionWebRequest(stock: Stock, quantity: Int, completion: @ escaping (Int, Double) -> ()) {
+    let url = basePath + "/stock/" + stock.symbol!.lowercased() + "/quote"
+    let request = URLRequest(url: URL(string: url)!)
+    let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+        if let data = data {
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    let stock_price = json["latestPrice"] as! Double
+                    completion(quantity, stock_price)
+                }
+            } catch { print(error.localizedDescription) }
         }
     }
-    
-    func showInsufficientFundsAlert() {
-        let accountAlert: UIAlertController = UIAlertController(title: "Error", message: "Insufficient funds in account", preferredStyle: .alert)
-        let action1: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel)
-        accountAlert.addAction(action1)
-        self.present(accountAlert, animated: true)
+
+    task.resume()
+
     }
-    
-    func invalidInputAlert() {
-        let inputAlert: UIAlertController = UIAlertController(title: "Error", message: "Number must be a positive integer", preferredStyle: .alert)
-        let action1: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel)
-        inputAlert.addAction(action1)
-        self.present(inputAlert, animated: true)
+
+    func stockTransaction(stock: Stock, quantity: Int) {
+        stockTransactionWebRequest(stock: stock, quantity: quantity) { (numberOfShares: Int, stockPrice: Double) -> () in
+            if account_container[0].balance < (stockPrice * Double(quantity)) {
+                insufficientFundsAlert(controller: self)
+                return
+
+            } else {
+                account_container[0].balance -= (stockPrice * Double(quantity))
+                stock.quantity = Int32(Int(stock.quantity) + quantity)
+                do {
+                    try context1.save()
+                } catch { print(error.localizedDescription) }
+                DispatchQueue.main.async {
+                    self.accountLabel.text = "Account balance: $" + String(account_container[0].balance)
+                }
+            }
+        }
     }
-    
-    func invalidStockAlert() {
-        let stockAlert: UIAlertController = UIAlertController(title: "Error", message: "Please enter a valid stock symbol", preferredStyle: .alert)
-        let action1: UIAlertAction = UIAlertAction(title: "Ok", style: .cancel)
-        stockAlert.addAction(action1)
-        self.present(stockAlert, animated: true)
-    }
-    
-}
+ }

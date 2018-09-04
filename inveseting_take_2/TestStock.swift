@@ -5,5 +5,5 @@ import Foundation
 struct TestStock {
     var symbol: String
     var name: String
+    var price: Double
 }
-
