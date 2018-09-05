@@ -7,7 +7,7 @@ let context1 = (UIApplication.shared.delegate as! AppDelegate).persistentContain
 let basePath = "https://api.iextrading.com/1.0"
 
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class MainViewController: UIViewController, UITextFieldDelegate {
     
 
   
@@ -246,7 +246,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 // MARK: TableView Methods
 
-extension ViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -264,7 +264,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -272,7 +272,7 @@ extension ViewController: UITableViewDelegate {
 
 // MARK: Transaction Methods
 
-extension ViewController {
+extension MainViewController {
     func stockTransactionWebRequest(stock: Stock, quantity: Int, completion: @ escaping (Int, Double) -> ()) {
     let url = basePath + "/stock/" + stock.symbol!.lowercased() + "/quote"
     let request = URLRequest(url: URL(string: url)!)

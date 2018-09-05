@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-647" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="inveseting_take_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="investment_sim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,7 @@
         <!--Stock view controller-->
         <scene sceneID="QWC-f8-u3l">
             <objects>
-                <viewController id="NsC-08-rc8" customClass="Stock_view_controller" customModule="inveseting_take_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NsC-08-rc8" customClass="Stock_view_controller" customModule="investment_sim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nuf-AU-Yvy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

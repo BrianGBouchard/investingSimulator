@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A8472A50212B37650008FB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A4F212B37650008FB40 /* AppDelegate.swift */; };
 		A8472A52212B37650008FB40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A51212B37650008FB40 /* ViewController.swift */; };
 		A8472A55212B37650008FB40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8472A53212B37650008FB40 /* Main.storyboard */; };
-		A8472A58212B37650008FB40 /* inveseting_take_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8472A56212B37650008FB40 /* inveseting_take_2.xcdatamodeld */; };
+		A8472A58212B37650008FB40 /* investing_take_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8472A56212B37650008FB40 /* investing_take_2.xcdatamodeld */; };
 		A8472A5A212B37660008FB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8472A59212B37660008FB40 /* Assets.xcassets */; };
 		A8472A5D212B37660008FB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8472A5B212B37660008FB40 /* LaunchScreen.storyboard */; };
 		A8472A69212C4CAA0008FB40 /* Stock_view_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A68212C4CAA0008FB40 /* Stock_view_controller.swift */; };
 		A8472AB3212DBD1F0008FB40 /* EPS_stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472AB2212DBD1F0008FB40 /* EPS_stat.swift */; };
 		A8472AD82136FD040008FB40 /* TestStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472AD72136FD040008FB40 /* TestStock.swift */; };
 		A8472ADE213725940008FB40 /* ErrorAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472ADD213725940008FB40 /* ErrorAlerts.swift */; };
+		A8FF60C72140480F00476786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8472A4F212B37650008FB40 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A8472A4C212B37650008FB40 /* inveseting_take_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inveseting_take_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8472A4C212B37650008FB40 /* investment_sim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = investment_sim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8472A4F212B37650008FB40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8472A51212B37650008FB40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8472A54212B37650008FB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		A8472A43212B37650008FB40 = {
 			isa = PBXGroup;
 			children = (
-				A8472A4E212B37650008FB40 /* inveseting_take_2 */,
+				A8472A4E212B37650008FB40 /* investing_take_2 */,
 				A8472A4D212B37650008FB40 /* Products */,
 			);
 			indentWidth = 4;
@@ -58,12 +58,12 @@
 		A8472A4D212B37650008FB40 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A8472A4C212B37650008FB40 /* inveseting_take_2.app */,
+				A8472A4C212B37650008FB40 /* investment_sim.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A8472A4E212B37650008FB40 /* inveseting_take_2 */ = {
+		A8472A4E212B37650008FB40 /* investing_take_2 */ = {
 			isa = PBXGroup;
 			children = (
 				A8472A4F212B37650008FB40 /* AppDelegate.swift */,
@@ -76,17 +76,17 @@
 				A8472A59212B37660008FB40 /* Assets.xcassets */,
 				A8472A5B212B37660008FB40 /* LaunchScreen.storyboard */,
 				A8472A5E212B37660008FB40 /* Info.plist */,
-				A8472A56212B37650008FB40 /* inveseting_take_2.xcdatamodeld */,
+				A8472A56212B37650008FB40 /* investing_take_2.xcdatamodeld */,
 			);
-			path = inveseting_take_2;
+			path = investing_take_2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A8472A4B212B37650008FB40 /* inveseting_take_2 */ = {
+		A8472A4B212B37650008FB40 /* investment_sim */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8472A61212B37660008FB40 /* Build configuration list for PBXNativeTarget "inveseting_take_2" */;
+			buildConfigurationList = A8472A61212B37660008FB40 /* Build configuration list for PBXNativeTarget "investment_sim" */;
 			buildPhases = (
 				A8472A48212B37650008FB40 /* Sources */,
 				A8472A49212B37650008FB40 /* Frameworks */,
@@ -96,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = inveseting_take_2;
+			name = investment_sim;
 			productName = inveseting_take_2;
-			productReference = A8472A4C212B37650008FB40 /* inveseting_take_2.app */;
+			productReference = A8472A4C212B37650008FB40 /* investment_sim.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A8472A47212B37650008FB40 /* Build configuration list for PBXProject "inveseting_take_2" */;
+			buildConfigurationList = A8472A47212B37650008FB40 /* Build configuration list for PBXProject "investment_sim" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A8472A4B212B37650008FB40 /* inveseting_take_2 */,
+				A8472A4B212B37650008FB40 /* investment_sim */,
 			);
 		};
 /* End PBXProject section */
@@ -156,9 +156,9 @@
 				A8472ADE213725940008FB40 /* ErrorAlerts.swift in Sources */,
 				A8472AD82136FD040008FB40 /* TestStock.swift in Sources */,
 				A8472A69212C4CAA0008FB40 /* Stock_view_controller.swift in Sources */,
-				A8472A50212B37650008FB40 /* AppDelegate.swift in Sources */,
+				A8FF60C72140480F00476786 /* AppDelegate.swift in Sources */,
 				A8472AB3212DBD1F0008FB40 /* EPS_stat.swift in Sources */,
-				A8472A58212B37650008FB40 /* inveseting_take_2.xcdatamodeld in Sources */,
+				A8472A58212B37650008FB40 /* investing_take_2.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PABAKRALZ;
-				INFOPLIST_FILE = inveseting_take_2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/investing_take_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PABAKRALZ;
-				INFOPLIST_FILE = inveseting_take_2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/investing_take_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A8472A47212B37650008FB40 /* Build configuration list for PBXProject "inveseting_take_2" */ = {
+		A8472A47212B37650008FB40 /* Build configuration list for PBXProject "investment_sim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8472A5F212B37660008FB40 /* Debug */,
@@ -346,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8472A61212B37660008FB40 /* Build configuration list for PBXNativeTarget "inveseting_take_2" */ = {
+		A8472A61212B37660008FB40 /* Build configuration list for PBXNativeTarget "investment_sim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8472A62212B37660008FB40 /* Debug */,
@@ -358,13 +358,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A8472A56212B37650008FB40 /* inveseting_take_2.xcdatamodeld */ = {
+		A8472A56212B37650008FB40 /* investing_take_2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				A8472A57212B37650008FB40 /* inveseting_take_2.xcdatamodel */,
 			);
 			currentVersion = A8472A57212B37650008FB40 /* inveseting_take_2.xcdatamodel */;
-			path = inveseting_take_2.xcdatamodeld;
+			path = investing_take_2.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
